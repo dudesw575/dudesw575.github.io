@@ -25,11 +25,11 @@ jobs:
       - run: npm run build
         env:
           CI: true
-          GITHUB_CLIENT_ID: ${{ CLIENT_ID }}
-          GITHUB_CLIENT_SECRET: ${{ CLIENT_SECRET }}
-          REPOO_FULL_NAME: ${{ REPO_FULL_NAME }}
-          BASE_BRANCH: ${{ BASE_BRANCH }}
-          SIGNING_KEY: ${{ SIGNING_KEY }}
+          GITHUB_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          GITHUB_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          REPOO_FULL_NAME: ${{ secrets.REPO_FULL_NAME }}
+          BASE_BRANCH: ${{ secrets.BASE_BRANCH }}
+          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
